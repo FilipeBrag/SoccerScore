@@ -11,7 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import br.edu.ifsp.scl.sc3044807.soccerscore.ui.theme.SoccerScoreTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,11 +25,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             var navControler = rememberNavController()
 
-            NavHost(navController = navController, startDestination = "ConfigDePartida") {
+            NavHost(navController = navControler, startDestination = "ConfigDePartida") {
 
                 composable("ConfigDePartida") {
                     configScreen(onNavigate = { tA, tB, gA, gB ->
-                        navController.navigate("ResumoDaPartida/$tA/$tB/$gA/$gB")
+                        navControler.navigate("ResumoDaPartida/$tA/$tB/$gA/$gB")
                     })
                 }
 
@@ -44,8 +48,8 @@ class MainActivity : ComponentActivity() {
                     val gB = backStack.arguments?.getInt("gB") ?: 0
 
                     resumeScreen(tA, tB, gA, gB,
-                        onConfirm = { navController.navigate("ResultadoFinal/$tA/$tB/$gA/$gB") },
-                        onEdit = { navController.popBackStack() }
+                        onConfirm = { navControler.navigate("ResultadoFinal/$tA/$tB/$gA/$gB") },
+                        onEdit = { navControler.popBackStack() }
                     )
                 }
 
@@ -65,7 +69,7 @@ class MainActivity : ComponentActivity() {
 
                     resultScreen(tA, tB, gA, gB,
                         onNovoJogo = {
-                            navController.navigate("ConfigDePartida") {
+                            navControler.navigate("ConfigDePartida") {
                                 popUpTo("ConfigDePartida") { inclusive = true }
                             }
                         }
@@ -73,21 +77,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SoccerScoreTheme {
-        Greeting("Android")
     }
 }

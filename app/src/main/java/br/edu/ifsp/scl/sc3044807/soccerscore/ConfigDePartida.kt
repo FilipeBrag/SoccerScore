@@ -60,9 +60,3 @@ fun configScreen(onNavigate: (String, String, Int, Int) -> Unit){
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun ConfigScreenPreview() {
-    ConfigScreen { _, _, _, _ -> }
-}
