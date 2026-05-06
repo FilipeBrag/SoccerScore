@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun ConfigScreen(onNavigate: (String, String, Int, Int) -> Unit){
+fun configScreen(onNavigate: (String, String, Int, Int) -> Unit){
     var nomeA by rememberSaveable { mutableStateOf("") }
     var nomeB by rememberSaveable { mutableStateOf("")}
     var golsA by rememberSaveable { mutableStateOf("")}

@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun TelaResumo(timeA: String, timeB: String, golsA: Int, golsB: Int, onConfirm: () -> Unit, onEdit: () -> Unit) {
+fun resumeScreen(timeA: String, timeB: String, golsA: Int, golsB: Int, onConfirm: () -> Unit, onEdit: () -> Unit) {
     Column(modifier = Modifier.padding(16.dp)) {
         Text("Resumo da Partida")
         Text("Time A: $timeA")
