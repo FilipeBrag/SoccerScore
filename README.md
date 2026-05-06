@@ -1,8 +1,8 @@
-#SoccerScore
+# SoccerScore
 
 Projeto de mobile que tem como objetivo criar um app para simular um placar de uma partida de futebol, permitindo ao usuario inserir dados de uma partida e visualizar o resultado final. Usando Jetpack Compose e Navigation
 
-#Funcionalidades
+# Funcionalidades
 
 O aplicativo é composto por três telas distintas, com passagem de parâmetros via rotas:
 
@@ -22,7 +22,7 @@ Resultado Final (Tela 3):
 Aplica a regra de negócio para definir o desfecho da partida (Vitória do Time A, Vitória do Time B ou Empate).
 Interface intuitiva com botão para reiniciar o simulador ("Novo Jogo"), limpando o histórico de navegação.
 
-#Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 Linguagem: Kotlin
 
